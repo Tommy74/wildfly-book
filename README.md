@@ -40,17 +40,34 @@ public class HelloWorldServlet extends HttpServlet {
 ## Bootable Jar
 
 But [WildFly](https://www.wildfly.org/) has evolved and now, you can create stand-alone applications like you do with [Spring Boot](https://spring.io/projects/spring-boot):
-it is called "[Bootable Jar](https://docs.wildfly.org/bootablejar/)" and it means that, after building your application with e.g. maven, you obtain a jar file that can be started like:
+it is called "[Bootable Jar](https://docs.wildfly.org/bootablejar/)" and it means that, after building your application with e.g. maven (we used the [jaxrs](https://github.com/wildfly-extras/wildfly-jar-maven-plugin/tree/10.0.0.Final/examples/jaxrs) example ):
 
 ```shell
-java -jar target/myapp-bootable.jar
+mvn clean install -DskipTests -Denforcer.skip
+...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+```
+`
+you obtain a jar file that can be started like:
+
+```shell
+java -jar target/jaxrs-bootable.jar
+...
+17:28:36,499 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 29.0.0.Final (WildFly Core 21.1.0.Final) started in 1347ms - Started 159 of 163 services (30 services are lazy, passive or on-demand) - Server configuration file in use: standalone.xml
 ```
 
-which contains both your [Jakarta EE](https://jakarta.ee/) application and [WildFly](https://www.wildfly.org/);
+which contains both your [Jakarta EE](https://jakarta.ee/) application and [WildFly](https://www.wildfly.org/) ready to use:
+
+```shell
+curl http://127.0.0.1:8080/hello
+Hello from WildFly bootable jar!
+```
 
 Actually it's even more exciting than that, because you can also "trim" [Jakarta EE](https://jakarta.ee/) and obtain a super light jar which starts really fast;
 
-For example, if you just use REST and JPA, you can prune everything else (e.g. EJB layer, JMS layer, etc.) and the final `target/myapp-bootable.jar` will be less than a half the size of the full [WildFly](https://www.wildfly.org/) server; 
+For example, if you just use `jaxrs`, you can prune everything else (e.g. JPA, EJB, JMS, etc.) and the final `target/myapp-bootable.jar` will be approximately 1/4 the size of the full [WildFly](https://www.wildfly.org/) server; 
 
 
 # Cloud: Kubernetes and OpenShift
