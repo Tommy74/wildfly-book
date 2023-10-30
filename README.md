@@ -70,7 +70,7 @@ Actually it's even more exciting than that, because you can also "trim" [Jakarta
 For example, if you just use `jaxrs`, you can prune everything else (e.g. JPA, EJB, JMS, etc.) and the final `target/myapp-bootable.jar` will be approximately 1/4 the size of the full [WildFly](https://www.wildfly.org/) server; 
 
 
-# Cloud: Kubernetes and OpenShift
+## Cloud: Kubernetes and OpenShift
 
 [WildFly](https://www.wildfly.org/) has made it super easy to deploy on Kubernetes and OpenShift: more on this in later chapters;
 
