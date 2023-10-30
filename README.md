@@ -69,7 +69,7 @@ Actually it's even more exciting than that, because you can also "trim" [Jakarta
 
 For example, if you just use `jaxrs`, you can prune everything else (e.g. JPA, EJB, JMS, etc.) and the final `target/myapp-bootable.jar` will be approximately 1/4 the size of the full [WildFly](https://www.wildfly.org/) server; 
 
-[WildFly](https://www.wildfly.org/) also supports [MicroProfile](https://microprofile.io/); this means that, e.g. you can create an application that consumes JTW tokens! 
+In addition to [Jakarta EE](https://jakarta.ee/), [WildFly](https://www.wildfly.org/) also supports [MicroProfile](https://microprofile.io/); this means that, e.g. you can create an application that consumes JTW tokens! 
 
 
 ## Cloud: Kubernetes and OpenShift
