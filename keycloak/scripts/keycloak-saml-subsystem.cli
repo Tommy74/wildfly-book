@@ -1,8 +1,8 @@
 /subsystem=keycloak-saml/secure-deployment=ROOT.war/:add
 
-/subsystem=keycloak-saml/secure-deployment=ROOT.war/SP="wildfly-keycloak-application"/:add(sslPolicy=EXTERNAL,logoutPage="/logout"
+/subsystem=keycloak-saml/secure-deployment=ROOT.war/SP="http://localhost:8080"/:add(sslPolicy=EXTERNAL,logoutPage="SPECIFY YOUR LOGOUT PAGE!")
 
-/subsystem=keycloak-saml/secure-deployment=ROOT.war/SP="wildfly-keycloak-application"/IDP=idp/:add( \
+/subsystem=keycloak-saml/secure-deployment=ROOT.war/SP="http://localhost:8080"/IDP=idp/:add( \
     SingleSignOnService={ \
         signRequest=false, \
         validateResponseSignature=false, \
