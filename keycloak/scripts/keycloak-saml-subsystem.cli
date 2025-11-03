@@ -1,6 +1,6 @@
 /subsystem=keycloak-saml/secure-deployment=ROOT.war/:add
 
-/subsystem=keycloak-saml/secure-deployment=ROOT.war/SP="wildfly-keycloak-application"/:add(sslPolicy=EXTERNAL,logoutPage="/logout"
+/subsystem=keycloak-saml/secure-deployment=ROOT.war/SP="wildfly-keycloak-application"/:add(sslPolicy=EXTERNAL,logoutPage="/logout")
 
 /subsystem=keycloak-saml/secure-deployment=ROOT.war/SP="wildfly-keycloak-application"/IDP=idp/:add( \
     SingleSignOnService={ \
@@ -21,4 +21,4 @@
 )
 
 /subsystem=logging/logger=org.wildfly.security:add(level=DEBUG)
-/subsystem=logging/logger=org.keycloak.saml:add(level=DEBUG)
+/subsystem=logging/logger=org.keycloak:add(level=DEBUG)
