@@ -21,4 +21,4 @@
 )
 
 /subsystem=logging/logger=org.wildfly.security:add(level=DEBUG)
-/subsystem=logging/logger=org.keycloak:add(level=DEBUG)
+/subsystem=logging/logger=org.keycloak.saml:add(level=DEBUG)

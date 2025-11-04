@@ -1,6 +1,5 @@
 package org.wildfly.book.examples;
 
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -13,8 +12,7 @@ import java.security.Principal;
 @WebServlet("/user-servlet")
 public class UserServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws
-            ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         try (PrintWriter writer = resp.getWriter()) {
             writer.println("<html>");
             writer.println(" <head><title>User Servlet</title></head>");
@@ -23,7 +21,9 @@ public class UserServlet extends HttpServlet {
             writer.println(" <p>");
             writer.print(" Current Principal '");
             Principal user = req.getUserPrincipal();
-            writer.print(user != null ? user.getName() : "NO AUTHENTICATED USER");
+            writer.print(user != null ?
+                    (user.getName() + " " + req.getRemoteUser() + " " + req.getUserPrincipal().toString())
+                    : "NO AUTHENTICATED USER");
             writer.print("'");
             writer.println(" </p>");
             writer.println(" </body>");

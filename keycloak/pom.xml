@@ -109,6 +109,10 @@
                     <galleon-options>
                         <jboss-fork-embedded>true</jboss-fork-embedded>
                     </galleon-options>
+                    <commands>
+                        <command>/subsystem=logging/logger=org.wildfly.security:add(level=DEBUG)</command>
+                        <command>/subsystem=logging/logger=org.keycloak.saml:add(level=DEBUG)</command>
+                    </commands>
                 </configuration>
                 <executions>
                     <execution>
