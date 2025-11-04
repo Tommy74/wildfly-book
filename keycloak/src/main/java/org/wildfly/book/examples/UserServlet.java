@@ -21,9 +21,7 @@ public class UserServlet extends HttpServlet {
             writer.println(" <p>");
             writer.print(" Current Principal '");
             Principal user = req.getUserPrincipal();
-            writer.print(user != null ?
-                    (user.getName() + " " + req.getRemoteUser() + " " + req.getUserPrincipal().toString())
-                    : "NO AUTHENTICATED USER");
+            writer.print(user != null ? user.getName() : "NO AUTHENTICATED USER");
             writer.print("'");
             writer.println(" </p>");
             writer.println(" </body>");

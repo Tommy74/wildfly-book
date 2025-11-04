@@ -1,0 +1,5 @@
+.idea/
+**/.idea/
+**/.mvn/
+**/target/
+keycloak-26.4.2

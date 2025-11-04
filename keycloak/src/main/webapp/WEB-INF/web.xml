@@ -9,7 +9,7 @@
             <url-pattern>/user-servlet</url-pattern>
         </web-resource-collection>
         <auth-constraint>
-            <role-name>user</role-name>
+            <role-name>user-role</role-name>
         </auth-constraint>
     </security-constraint>
 
@@ -18,6 +18,6 @@
     </login-config>
 
     <security-role>
-        <role-name>user</role-name>
+        <role-name>user-role</role-name>
     </security-role>
 </web-app>
